@@ -1,0 +1,6 @@
+server:
+  port: 8001
+
+person:
+  name: zhang
+  age: 40

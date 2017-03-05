@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: configserver
+  cloud:
+    config:
+      enabled: false
+      server:
+      ## 默认需要连接git库
+        git:
+          uri: https://github.com/luolibing/gitRepo
+        health:
+          repositories:
+            person:
+              profiles: product1, test1
+          enabled: true
+
+#
+#  profiles:
+#    active: native
+
+# 创建keystore, 作为加密解密的库
+#keytool -genkeypair -alias mytestkey -keyalg RSA \
+#  -dname "CN=Web Server,OU=Unit,O=Organization,L=City,S=State,C=US" \
+#  -keypass changeme -keystore server.jks -storepass letmein

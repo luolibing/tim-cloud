@@ -1,0 +1,1 @@
+org.springframework.cloud.bootstrap.BootstrapConfiguration = cn.boxfish.cloud.config.server.CustomConfigServiceBootstrapConfiguration
