@@ -1,0 +1,9 @@
+server:
+  port: 8003
+
+eureka:
+  client:
+    healthcheck:
+      enabled: true
+    serviceUrl:
+      defaultZone: http://peer1:8761/eureka/
