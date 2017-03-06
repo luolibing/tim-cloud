@@ -6,4 +6,15 @@ eureka:
     healthcheck:
       enabled: true
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://peer1:8761/eureka/
+
+## 心跳间隔时长
+  instance:
+    lease-renewal-interval-in-seconds: 5
+
+
+#  instance:
+#    instance-id: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${randon.value}}}
+#  instance:
+#    hostname: ${vcap.application.uris[0]}
+#    non-secure-port: 80
