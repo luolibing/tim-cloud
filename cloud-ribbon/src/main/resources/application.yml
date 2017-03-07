@@ -1,0 +1,17 @@
+server:
+  port: 8006
+
+## eureka-client指定负载均衡算法为，响应时间加权算法
+eureka-client:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.WeightedResponseTimeRule
+    listOfServers: localhost:8003
+
+ribbon:
+  eureka:
+    enabled: false
+
+#eureka:
+#  instance:
+#    metadataMap:
+#      zone: http://peer1:8761/eureka
