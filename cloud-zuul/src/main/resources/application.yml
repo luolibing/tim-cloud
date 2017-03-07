@@ -1,0 +1,23 @@
+server:
+  port: 8005
+
+zuul:
+  ## 只允许eureka-client这个服务的访问, 如果去掉ignored-services, 默认是可以使用/serviceId, 和指定的/client访问的
+  ignored-services: '*'
+  routes:
+    eureka-client:
+      ## 细粒度路由控制
+      path: /client/**
+      serviceId: eureka-client
+
+#    手工指定物理地址
+#    eureka-client:
+#      path: /client/**
+#      url: http://boxfish.com/fishcard
+
+eureka:
+  client:
+    healthcheck:
+      enabled: true
+    service-url:
+      defaultZone: http://peer1:8761/eureka

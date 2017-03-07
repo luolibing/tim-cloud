@@ -14,6 +14,10 @@
         <module>eureka-server</module>
         <module>eureka-client</module>
         <module>cloud-hystrix</module>
+        <module>cloud-hystrix-dashboard</module>
+        <module>cloud-turbine</module>
+        <module>cloud-ribbon</module>
+        <module>cloud-zuul</module>
     </modules>
 
     <properties>

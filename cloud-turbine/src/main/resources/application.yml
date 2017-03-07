@@ -1,9 +1,10 @@
 server:
-  port: 8003
+  port: 8005
 
 eureka:
   client:
     healthcheck:
       enabled: true
+
     service-url:
-      defaultZone: http://peer1:8761/eureka/
+      defaultZone: http://peer1:8761/eureka
