@@ -1,9 +1,6 @@
 package cn.boxfish.cloud.ribbon;
 
-import com.netflix.client.config.IClientConfig;
-import com.netflix.loadbalancer.*;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.ServiceInstance;
@@ -59,7 +56,7 @@ public class RibbonApplication {
         ServiceInstance instance = loadBalancerClient.choose("eureka-client");
         URI uri = UriComponentsBuilder
                 .fromUriString(String.format("http://%s:%s", instance.getHost(), Integer.toString(instance.getPort())))
-                .path("/")
+                .path("/health")
                 .build()
                 .toUri();
         Map result = new RestTemplate().getForObject(uri, Map.class);

@@ -18,6 +18,8 @@
         <module>cloud-turbine</module>
         <module>cloud-ribbon</module>
         <module>cloud-zuul</module>
+        <module>cloud-feign</module>
+        <module>feign-client-interface</module>
     </modules>
 
     <properties>
