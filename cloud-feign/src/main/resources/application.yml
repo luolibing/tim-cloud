@@ -8,3 +8,7 @@ eureka:
       enabled: true
     service-url:
       defaultZone: http://peer1:8761/eureka
+
+feign:
+  name: eureka-client
+  url: http://localhost:8002

@@ -1,12 +1,13 @@
 server:
-  port: 8002
+  port: 8003
 
 eureka:
   client:
     healthcheck:
       enabled: true
     service-url:
-      defaultZone: http://peer1:8761/eureka/
+      ## 填写两个eureka-server, 会依次查看哪个服务起着
+      defaultZone: http://peer1:8761/eureka, http://peer2:8762/eureka
 
 ## 心跳间隔时长
   instance:

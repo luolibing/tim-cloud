@@ -1,7 +1,8 @@
 package cn.boxfish.cloud.feigh.web;
 
-import cn.boxfish.feign.interfaces.eurekaclient.EurekaClient;
-import cn.boxfish.feign.interfaces.eurekaclient.entity.Person;
+import cn.boxfish.cloud.feigh.EurekaClient;
+import cn.boxfish.cloud.feigh.Person;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Import;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Import(EurekaClient.class)
 public class PersonController {
 
+    @Autowired
     private EurekaClient eurekaClient;
 
     @RequestMapping(value = "/person/{id}")
