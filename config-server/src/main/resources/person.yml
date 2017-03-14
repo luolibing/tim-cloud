@@ -1,0 +1,14 @@
+person:
+  name: luolibing
+  age: 30
+---
+spring.profiles: product
+person:
+  name: liuxiaoling
+  age: 30
+
+---
+spring.profiles: test
+person:
+  name: luominghao
+  age: 5
