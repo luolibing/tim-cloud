@@ -3,3 +3,10 @@ spring:
     name: person
   profiles:
     active: product1,test1
+
+  # 设置discovery为true, 这样将使用eureka来发现config-server, 配置service-id设置配置服务名, 前提是需要配置在bootstrap.yml
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: configserver
