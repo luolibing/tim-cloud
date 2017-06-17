@@ -7,15 +7,17 @@ zuul:
   routes:
     eureka-client:
       ## 细粒度路由控制
-      path: /client/**
+      path: /eureka-client/**
       serviceId: eureka-client
-      ## 关闭前缀剥离, 默认为true, 如果开启效果为/client/contextPath, 如果关闭则为/contextPath
+      ## 关闭前缀剥离(前提是path=:/contextPath/**中的path和contextPath一致即可， 如果不一致貌似不起作用), 默认为true, 如果开启效果为/client/contextPath, 如果关闭则为/contextPath
       strip-prefix: false
+  # 所有服务的前缀
+  prefix: /api
 
 #    手工指定物理地址
 #    eureka-client:
 #      path: /client/**
-#      url: http://boxfish.com/fishcard
+#      url: http://tim.com/fishcard
 
 eureka:
   client:

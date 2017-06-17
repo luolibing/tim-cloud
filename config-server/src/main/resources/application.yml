@@ -8,6 +8,7 @@ encrypt:
     alias: mytestkey
     secret: changeme
 
+
 #person:
 #  name: luolibing
 #  age: 30

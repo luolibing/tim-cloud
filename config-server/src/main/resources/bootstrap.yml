@@ -8,16 +8,22 @@ spring:
       ## 默认需要连接git库
         git:
 #          uri: https://github.com/luolibing/gitRepo
-          uri: file://Users/boxfish/Documents/tim-cloud/config-server/src/main/resources
+          uri: file://Users/tim/Documents/tim-cloud/config-server/src/main/resources
         health:
           repositories:
             person:
               profiles: product1, test1
           enabled: true
 
-
   profiles:
     active: native
+
+eureka:
+  client:
+    healthcheck:
+      enabled: true
+    service-url:
+      defaultZone: http://peer1:8761/eureka
 
 # 创建keystore, 作为加密解密的库
 #keytool -genkeypair -alias mytestkey -keyalg RSA \
