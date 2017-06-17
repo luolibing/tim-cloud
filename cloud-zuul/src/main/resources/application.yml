@@ -25,3 +25,6 @@ eureka:
       enabled: true
     service-url:
       defaultZone: http://peer1:8761/eureka
+
+
+# 可以在不同的服务之间共享头信息, 但是对于敏感头信息不应该向下游服务进行泄露. 可以在路由过滤配置中忽略的一些头信息
