@@ -7,8 +7,8 @@ spring:
       server:
       ## 默认需要连接git库
         git:
-#          uri: https://github.com/luolibing/gitRepo
-          uri: file://Users/tim/Documents/tim-cloud/config-server/src/main/resources
+          uri: https://github.com/luolibing/gitRepo
+#          uri: file://Users/tim/Documents/tim-cloud/config-server/src/main/resources
         health:
           repositories:
             person:

@@ -25,6 +25,7 @@
     <properties>
         <spring.boot.version>1.4.4.RELEASE</spring.boot.version>
         <spring.cloud.version>Camden.SR5</spring.cloud.version>
+        <docker.image.prefix>tim-cloud</docker.image.prefix>
     </properties>
 
     <parent>
@@ -78,6 +79,42 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
+
+            <plugin>
+                <groupId>com.spotify</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
+                <version>0.4.11</version>
+                <!--<configuration>-->
+                    <!--<imageName>${project.artifactId}</imageName>-->
+                    <!--<dockerDirectory>src/main/docker</dockerDirectory>-->
+                    <!--<resources>-->
+                        <!--<resource>-->
+                            <!--<targetPath>/</targetPath>-->
+                            <!--<directory>${project.build.directory}</directory>-->
+                            <!--<include>${project.build.finalName}.jar</include>-->
+                        <!--</resource>-->
+                    <!--</resources>-->
+                <!--</configuration>-->
+
+                <configuration>
+                    <!--<skipDockerBuild>false</skipDockerBuild>-->
+                    <imageName>${docker.image.prefix}/${project.artifactId}</imageName>
+                    <!--<dockerDirectory>src/main/docker</dockerDirectory>-->
+                    <serverId>docker-hub</serverId>
+                    <!--<registryUrl>https://10.10.6.50:5000</registryUrl>-->
+                    <!--<dockerHost>http://127.0.0.1:2376</dockerHost>-->
+                    <baseImage>frolvlad/alpine-oraclejdk8:slim</baseImage>
+                    <entryPoint>["java", "-jar", "/${project.build.finalName}.jar"]</entryPoint>
+                    <resources>
+                        <resource>
+                            <targetPath>/</targetPath>
+                            <directory>${project.build.directory}</directory>
+                            <include>${project.build.finalName}.jar</include>
+                        </resource>
+                    </resources>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
+
 </project>
