@@ -1,0 +1,26 @@
+server:
+  port: 8009
+  context-path: /
+
+eureka:
+  client:
+    healthcheck:
+      enabled: true
+    service-url:
+      ## 填写两个eureka-server, 会依次查看哪个服务起着
+      defaultZone: http://peer1:8761/eureka, http://peer2:8762/eureka
+
+## 心跳间隔时长
+  instance:
+    lease-renewal-interval-in-seconds: 5
+
+
+#  instance:
+#    instance-id: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${randon.value}}}
+#  instance:
+#    hostname: ${vcap.application.uris[0]}
+#    non-secure-port: 80
+
+
+spring.boot.admin.url: http://peer1:8005
+management.security.enabled: false

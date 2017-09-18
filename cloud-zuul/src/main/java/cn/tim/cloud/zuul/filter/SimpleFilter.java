@@ -1,4 +1,4 @@
-package cn.boxfish.cloud.zuul.filter;
+package cn.tim.cloud.zuul.filter;
 
 import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;

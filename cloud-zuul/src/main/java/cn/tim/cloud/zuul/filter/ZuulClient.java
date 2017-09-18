@@ -1,4 +1,4 @@
-package cn.boxfish.cloud.zuul.filter;
+package cn.tim.cloud.zuul.filter;
 
 /**
  * Created by LuoLiBing on 17/3/16.

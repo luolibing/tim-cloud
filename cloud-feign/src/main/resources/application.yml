@@ -12,3 +12,6 @@ eureka:
 feign:
   name: eureka-client
   url: http://localhost:8002
+
+spring.boot.admin.url: http://peer1:8005
+management.security.enabled: false
