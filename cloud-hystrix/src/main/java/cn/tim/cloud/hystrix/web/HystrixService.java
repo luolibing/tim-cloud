@@ -2,6 +2,7 @@ package cn.tim.cloud.hystrix.web;
 
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
+import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -13,8 +14,8 @@ import java.util.Random;
  * Created by TIM on 2017/3/6.
  *
  */
-@RestController
-public class HystrixController {
+@Service
+public class HystrixService {
 
     private Random rand = new Random(47);
 
@@ -43,10 +44,12 @@ public class HystrixController {
     )
     @RequestMapping(value = "/hystrix/stores")
     public Object getStores(Map<String, Object> params) throws InterruptedException {
-        Thread.sleep(5000);
+//        Thread.sleep(5000);
 //        if(rand.nextInt(100) % 2 == 0) {
 //            throw new RuntimeException("do stuff that might fail");
 //        }
+        System.out.println("threadId=" + Thread.currentThread().getId());
+        System.out.println(ObjectHolder.nameHolder.get());
         return Collections.singletonMap("result", rand.nextInt(100));
     }
 
